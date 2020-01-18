@@ -30,7 +30,7 @@ namespace AFPABNB
             string password = this.txtPassword.Text;
 
             DaoClient daoClient = new DaoClient();
-            Client client = daoClient.GetClient(login, password, 2);
+            Client client = daoClient.GetClient(login, password);
 
             if (client != null)
             {

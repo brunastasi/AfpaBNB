@@ -14,19 +14,18 @@ namespace AFPABNB.Dao
 
         }
 
-        public Client GetClient(string login, string password, int nbeParameter)
+        public Client GetClient(string login, string password)
         {
             bool isError = false;
             string errorMsg = "";
 
             Client client = null;
 
-            base.nbeParameter = nbeParameter;
 
             try
             {
 
-                this.sqlParameters = new SqlParameter[nbeParameter];
+                this.sqlParameters = new SqlParameter[2];
                 base.AddParameters("@Login", login);
                 base.AddParameters("@Password", password);
 
