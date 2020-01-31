@@ -1,52 +1,59 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EspaceClient/EspaceClient.Master" AutoEventWireup="true" CodeBehind="Reservation.aspx.cs" Inherits="AFPABNB.EspaceClient.Reservation" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
-<asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True"></asp:Label>
-      
 
-        <asp:ListView ID="gdvReserver" runat="server">
-        <ItemTemplate>
-            <div class="d-flex border bg-light p-2 mb-1">
-                <div class="border">
-                    <img src="../<%#Eval("Photo") %>" class="petite"/>
-                    <div class="grande">
-                    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-3">
+
+                <div class="list-group">
+                    <a href="Compte.aspx" class="list-group-item list-group-item-action">Mon Compte
+                    </a>
+                    <a href="Favoris.aspx" class="list-group-item list-group-item-action">Mes Favoris</a>
+                    <a href="Reservation.aspx" class="list-group-item list-group-item-action active">Mes Reservations</a>
+                    <a href="AjoutHebergement.aspx" class="list-group-item list-group-item-action">Ajouter un Hebergement</a>
+                    <a href="#" class="list-group-item list-group-item-action">Messagerie</a>
                 </div>
-                <div class="d-flex flex-column px-4">
-                    <div>
-                        <h3><%#Eval("Nom") %></h3>
-                    </div>
-                    <div>
-                        <span class="badge badge-pill badge-info"><%#Eval("Adresse.Ville") %></span>
-                        <span class="badge badge-pill badge-warning"><%--<%#Eval("Prix") %>--%> €</span>
-                    </div>
-                    <div>
-                        <p></br><%#Eval("Description") %></p>
-                    </div>
-                    <div>
-                        <asp:Button ID="btnDelete" runat="server" Text="Supprimer" CssClass="btn btn-danger" CommandArgument='<%# Eval("IdHebergement") %>' CommandName='Supprimer' OnClick="btnDelete_Click" />
-                    </div>
-                </div>
+
             </div>
+            <div class="col-9">
 
-     <div class="d-flex justify-content-center">
-     <div style="width: 1140px" class="bg-light border rounded p-3">
+                <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True"></asp:Label>
 
-  <div class="input-group">
-            <asp:DropDownList ID="DropDownList2" class="custom-select" runat="server">
-                <asp:ListItem>CB</asp:ListItem>
-                <asp:ListItem>Visa</asp:ListItem>
-                <asp:ListItem>Mastercard</asp:ListItem>
-                <asp:ListItem>American Express</asp:ListItem>
-                <asp:ListItem>Paypal</asp:ListItem>
-            </asp:DropDownList>
-  <div class="input-group-append">
-    <button class="btn btn-md btn-outline-success" type="button">PAIEMENT</button>
-  </div>
-</div>
+                <asp:ListView ID="gdvReserver" runat="server">
+                    <ItemTemplate>
+                        <div class="d-flex border bg-light p-2 mb-1">
+                            <div class="border">
+                                <img src="../Images/<%#Eval("Photo") %>" class="petite" />
+                                <div class="grande">
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column px-4">
+                                <div>
+                                    <h3><%#Eval("Nom") %></h3>
+                                </div>
+                                <div>
+                                    <span class="badge badge-pill badge-info"><%#Eval("Adresse.Ville") %></span>
+<%--                                    <span class="badge badge-pill badge-warning"><%#Eval("Reservation.Prix") %> €</span>--%>
+                                </div>
+                                <div>
+                                    <p></br><%#Eval("Description") %></p>
+                                </div>
+                                <div>
 
+                                    <asp:Button ID="Button1" Text="Procéder au paiement" runat="server" CssClass="btn btn-warning" CommandArgument='<%# Eval("IdHebergement") %>' OnClick="btnPaiement_Click" />
+                                    <asp:Button ID="Button2" runat="server" Text="Avis" CssClass="btn btn-primary" CommandArgument='<%# Eval("IdHebergement") %>' CommandName='Avi' OnClick="btnAvis_Click" />
+                                    <asp:Button ID="btnDelete" runat="server" Text="Supprimer" CssClass="btn btn-danger" CommandArgument='<%# Eval("IdHebergement") %>' CommandName='Supprimer' OnClick="btnDelete_Click" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </ItemTemplate>
+                </asp:ListView>
+
+            </div>
         </div>
     </div>
-        </ItemTemplate>
-    </asp:ListView>
+
 </asp:Content>

@@ -85,5 +85,56 @@ namespace AFPABNB.Dao
             }
             return isError;
         }
+
+        public List<Hebergement> DelReservation(int idclient, int idhebergement)
+        {
+            List<Hebergement> hebergements = null;
+
+            try
+            {
+                this.sqlParameters = new SqlParameter[2];
+                base.AddParameters("@IdClient", idclient.ToString());
+                base.AddParameters("@IdHebergement", idhebergement.ToString());
+
+
+                base.GetDataReader("sp_DelReservation", sqlParameters);
+
+                base.sqlDataReader.Close();
+                base.sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                string Message = ex.Message;
+            }
+
+            return hebergements;
+        }
+
+        public bool createAvis(int idclient, int idhebergement, decimal note, string commentaire, bool etat, int nbeParameter)
+        {
+            bool isError = false;
+            string errorMsg = "";
+            base.nbeParameter = nbeParameter;
+
+            try
+            {
+                this.sqlParameters = new SqlParameter[nbeParameter];
+                base.AddParameters("@IdClient", idclient.ToString());
+                base.AddParameters("@IdHebergement", idhebergement.ToString());
+                base.AddParameters("@Note", note.ToString());
+                base.AddParameters("@Commentaire", commentaire.ToString());
+                base.AddParameters("@Etat", etat.ToString());
+
+                base.executeQuery("sp_AddAvi");
+
+                base.sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                isError = true;
+                errorMsg = ex.Message;
+            }
+            return isError;
+        }
     }
 }

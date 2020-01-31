@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AFPABNB.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,15 @@ namespace AFPABNB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Client client = null;
 
+            //if (Session["Client"] != null)
+            //{
+            //    client = (Client)Session["Client"];
+
+            //    this.lblNom.Text = "" + client.Nom + " " + client.Prenom;
+
+            //}
         }
     }
 }

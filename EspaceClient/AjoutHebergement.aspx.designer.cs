@@ -15,31 +15,40 @@ namespace AFPABNB.EspaceClient
     {
 
         /// <summary>
-        /// Contrôle txtPrenom.
+        /// Contrôle txtNomHebergement.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrenom;
+        protected global::System.Web.UI.WebControls.TextBox txtNomHebergement;
 
         /// <summary>
-        /// Contrôle txtNom.
+        /// Contrôle filePhoto.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNom;
+        protected global::System.Web.UI.WebControls.FileUpload filePhoto;
 
         /// <summary>
-        /// Contrôle txtEmail.
+        /// Contrôle UploadButton.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Button UploadButton;
+
+        /// <summary>
+        /// Contrôle StatusLabel.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StatusLabel;
 
         /// <summary>
         /// Contrôle txtType.
@@ -49,6 +58,24 @@ namespace AFPABNB.EspaceClient
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtType;
+
+        /// <summary>
+        /// Contrôle txtDescription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+
+        /// <summary>
+        /// Contrôle txtNomAdresse.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomAdresse;
 
         /// <summary>
         /// Contrôle txtNumero.
@@ -87,30 +114,12 @@ namespace AFPABNB.EspaceClient
         protected global::System.Web.UI.WebControls.TextBox txtCodePostal;
 
         /// <summary>
-        /// Contrôle txtTelephone.
+        /// Contrôle Button1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelephone;
-
-        /// <summary>
-        /// Contrôle txtLogin.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLogin;
-
-        /// <summary>
-        /// Contrôle txtPassword.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

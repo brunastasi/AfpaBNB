@@ -11,12 +11,13 @@ namespace AFPABNB
 {
     public partial class DetailHebergement : System.Web.UI.Page
     {
-        private List<Hebergement> detail;
+        private List<Hebergement> detail; 
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             this.detail = (List<Hebergement>)Session["Detail"];
+
 
             if (!IsPostBack)
             {
@@ -26,9 +27,7 @@ namespace AFPABNB
             }
 
             Session.Remove("Detail");
-
         }
-
 
         protected void Favoris_Click(object sender, EventArgs e)
         {
@@ -100,5 +99,29 @@ namespace AFPABNB
 
         }
 
+        protected void Contact_Click(object sender, EventArgs e)
+        {
+
+            //Client client = null;
+            //client = (Client)Session["Client"];
+            
+            //Hebergement hebergement;
+            //hebergement = (Hebergement)Session["Detail"];
+
+            //int idexpediteur = client.IdClient;
+            //int iddestinataire = hebergement.IdClient;
+
+
+            //string messages = "test";
+
+            //string date = "20/20/2021";
+            //bool statut = true;
+
+
+            //DaoMessagerie daoMessagerie = new DaoMessagerie();
+            //daoMessagerie.createMessage(idexpediteur, iddestinataire, messages, date, statut);
+
+            //Response.Redirect("./ok.aspx");
+        }
     }
 }

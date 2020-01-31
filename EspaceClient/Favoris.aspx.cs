@@ -15,13 +15,9 @@ namespace AFPABNB.EspaceClient
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //BackOffice MasterPage = (BackOffice)Page.Master;
-            //Client client1 = MasterPage.client;
 
             Client client = null;
 
-            if (Session["Client"] != null)
-            {
                 client = (Client)Session["Client"];
                 this.favoris = this.loadFavoris(client.IdClient);
 
@@ -33,12 +29,6 @@ namespace AFPABNB.EspaceClient
                 {
                     this.Label1.Text = "<div class=\"alert alert-danger\" role=\"alert\">Vous n'avez actuellement pas de favoris !</div>";
                 }
-            }
-
-            if (client == null)
-            {
-                Response.Redirect("../Connexion.aspx");
-            }
 
 
             if (!IsPostBack)
@@ -57,16 +47,24 @@ namespace AFPABNB.EspaceClient
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(((Button)sender).CommandArgument);
-            Hebergement article = this.favoris.Where(a => a.IdHebergement == id).First();
 
-            if (article != null)
+            Client client = (Client)Session["Client"];
+            int idhebergement = Convert.ToInt32(((Button)sender).CommandArgument);
+
+            DaoFavoris daoFavoris = new DaoFavoris();
+            List<Hebergement> mesFavoris = daoFavoris.GetFavoris(client.IdClient, 1);
+
+            foreach (Hebergement item in mesFavoris)
             {
-
-                this.favoris.Remove(article);
-
-                Response.Redirect("Favoris.aspx");
+                if (item.IdHebergement == idhebergement)
+                {
+                    daoFavoris.DelFavoris(client.IdClient, idhebergement);
+                    Response.Redirect("../EspaceClient/Favoris.aspx");
+                    /*have*/
+                    break; //have kitkat
+                }
             }
+
         }
     }
 }

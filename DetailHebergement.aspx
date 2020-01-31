@@ -8,18 +8,21 @@
             <div class="col-lg-12">
 
                 <div class="card">
-                    <img class="card-img-top img-fluid" src='<%#Eval("Photo") %>' alt="" style="width: 1200px; height: 500px;">
+                    <img class="card-img-top img-fluid" src='./Images/<%#Eval("Photo") %>' alt="" style="width: 1200px; height: 500px;">
                     <div class="card-body">
                         <h3 class="card-title"><%#Eval("Nom") %></h3>
                         <span class="badge badge-pill badge-secondary"><%#Eval("Adresse.Numero") %> <%#Eval("Adresse.Voie") %> - <%#Eval("Adresse.CodePostal") %> <%#Eval("Adresse.Ville") %></span>
-                        <span class="badge badge-pill badge-warning"><%#Eval("Prix") %> €</span>
+                        <span class="badge badge-pill badge-warning"><%#Eval("Reservation.Prix") %> €</span>
                         <p class="card-text"><%#Eval("Description") %></p>
                         <span class="text-warning">★ ★ ★ ★ ☆</span>
                         4.0 étoiles
             <div>
                 <asp:Button ID="Button1" runat="server" CssClass="btn btn-warning mt-3" Text='Mettre en favoris' OnClick="Favoris_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
                 <asp:Button ID="Button2" runat="server" CssClass="btn btn-info mt-3" Text='Réserver' OnClick="Reserver_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
+
+                 <asp:Button ID="Button3" runat="server" CssClass="btn btn-primary mt-3" Text='Contacter' OnClick="Contact_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
             </div>
+                        <asp:TextBox ID="txtMessages" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
@@ -40,7 +43,7 @@
             </asp:TemplateField>
 
             <asp:BoundField DataField="Nom" HeaderText="Nom"/>
-            <asp:BoundField DataField="Description" HeaderText="Description" ItemStyle-CssClass="just"/>
+            <asp:BoundField DataField="Description" HeaderText="Description"/>
             <asp:BoundField DataField="Prix" HeaderText="Prix €/nuit" />
             <asp:BoundField DataField="Ville" HeaderText="Ville" />
             <asp:BoundField DataField="CodePostal" HeaderText="Code Postal" />

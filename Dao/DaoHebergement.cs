@@ -33,6 +33,8 @@ namespace AFPABNB.Dao
                     string photo = sqlDataReader["Photo"].ToString();
                     string type = sqlDataReader["Type"].ToString();
                     string description = sqlDataReader["Description"].ToString();
+                    int idclient = Convert.ToInt32(sqlDataReader["IdClient"]);
+
 
 
                     Hebergement hebergement = new Hebergement();
@@ -41,12 +43,17 @@ namespace AFPABNB.Dao
                     hebergement.Photo = photo;
                     hebergement.Type = type;
                     hebergement.Description = description;
+                    hebergement.IdClient = idclient;
 
                     hebergement.adresse = new Adresse();
                     hebergement.adresse.Numero = sqlDataReader["Numero"].ToString();
                     hebergement.adresse.Voie = sqlDataReader["Voie"].ToString();
                     hebergement.adresse.CodePostal = Convert.ToInt32(sqlDataReader["CodePostal"]);
                     hebergement.adresse.Ville = sqlDataReader["Ville"].ToString();
+
+                    hebergement.reservation = new Reservation();
+                    hebergement.reservation.Prix = Convert.ToDecimal(sqlDataReader["Prix"]);
+                    //hebergement.reservation.DateReservation = Convert.ToDateTime(sqlDataReader["DateReservation"]);
 
 
                     hebergements.Add(hebergement);
@@ -63,7 +70,7 @@ namespace AFPABNB.Dao
             return hebergements;
         }
 
-        public bool createHebergement(int idclient, string nomhebergement, string photo, string type, string description, string nomadresse, string numero,  string voie, string ville, string codepostal, int nbeParameter)
+        public bool createHebergement(int idclient, string nomhebergement, string photo, string type, string description, string nomadresse, string numero, string voie, string ville, string codepostal, int nbeParameter)
         {
             bool isError = false;
             string errorMsg = "";
@@ -77,7 +84,7 @@ namespace AFPABNB.Dao
                 base.AddParameters("@NomHebergement", nomhebergement.ToString());
 
                 base.AddParameters("@Photo", photo.ToString());
-                base.AddParameters("@Type", type.ToString());
+                base.AddParameters("@Type", type);
                 base.AddParameters("@Description", description.ToString());
 
                 base.AddParameters("@NomAdresse", nomadresse.ToString());

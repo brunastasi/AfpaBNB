@@ -1,4 +1,5 @@
-﻿using AFPABNB.Entities;
+﻿using AFPABNB.Dao;
+using AFPABNB.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,47 +17,9 @@ namespace AFPABNB
         {
 
         }
+
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-
-            //int idhebergement = Convert.ToInt32(((LinkButton)sender).CommandArgument);
-
-            //Hebergement hebergement = null;
-            //foreach (Hebergement item in this.hebergements)
-            //{
-            //    if (item.IdHebergement == idhebergement)
-            //    {
-            //        hebergement = item;
-            //        /*have*/
-            //        break; //have kitkat
-            //    }
-            //}
-
-            //if (Session["Detail"] != null)
-            //{
-            //    this.detail = (List<Hebergement>)Session["Detail"];
-
-            //    foreach (Hebergement item in this.detail)
-            //    {
-            //        if (item.IdHebergement == hebergement.IdHebergement)
-            //        {
-            //            Response.Redirect("Detail.aspx");
-            //        }
-            //        else
-            //        {
-            //            this.detail = (List<Hebergement>)Session["Detail"];
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    this.detail = new List<Hebergement>();
-            //}
-
-            //this.detail.Add(hebergement);
-
-            //Session["Detail"] = this.detail;
-            //Response.Redirect("DetailHebergement.aspx");
 
         }
 

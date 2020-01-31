@@ -16,6 +16,20 @@ namespace AFPABNB
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //string ddlDepartement = "";
+            //string ddlTypeHebergement = "";
+            //if (Page.PreviousPage != null)
+            //{
+            //    DropDownList ddlHebergement = <DropDownList> PreviousPage.FindControl("ddlDepartement");
+            //    DropDownList ddlTypeHebergement = <DropDownList> PreviousPage.FindControl("ddlTypeHebergement");
+
+            //    if (ddlDepartement != null && string isNullOrEmpty(ddlDepartement.SelectedValue))
+            //    ddlDepartement = ddlDepartement.SelectedValue;
+
+            //    if (ddlTypeHebergement != null && string isNullOrEmpty(ddlTypeHebergement.SelectedValue){
+            //        ddlTypeHebergement = ddlTypeHebergement.SelectValue;
+            //    }
+            //}
 
             this.hebergements = this.loadHebergements();
 
@@ -77,6 +91,7 @@ namespace AFPABNB
 
         protected void Reserver_Click(object sender, EventArgs e)
         {
+
             Client client = (Client)Session["Client"];
             int idhebergement = Convert.ToInt32(((Button)sender).CommandArgument);
 
@@ -112,31 +127,6 @@ namespace AFPABNB
         protected void Detail_Click(object sender, EventArgs e)
         {
 
-            //int idhebergement = Convert.ToInt32(((LinkButton)sender).CommandArgument);
-
-            //DaoHebergement daoHebergement = new DaoHebergement();
-
-            //List<Hebergement> mesHebergements = daoHebergement.GetHebergements();
-            //if (mesHebergements != null)
-            //{
-            //    bool existe = false;
-            //    foreach (Hebergement item in mesHebergements)
-            //    {
-            //        if (item.IdHebergement == idhebergement)
-            //        {
-            //            existe = true;
-            //            /*have*/
-            //            break; //have kitkat
-            //        }
-            //    }
-
-            //    this.detail = new List<Hebergement>();
-            //    //this.detail.Add(daoHebergement);
-
-            //    this.detail = (List<Hebergement>)Session["Detail"];
-
-            //    Response.Redirect("DetailHebergement.aspx");
-
             int idhebergement = Convert.ToInt32(((LinkButton)sender).CommandArgument);
 
             Hebergement hebergement = null;
@@ -158,7 +148,7 @@ namespace AFPABNB
                 {
                     if (item.IdHebergement == hebergement.IdHebergement)
                     {
-                        Response.Redirect("Detail.aspx");
+                        Response.Redirect("DetailHebergement.aspx");
                     }
                     else
                     {

@@ -33,10 +33,14 @@
                         <!-- form-group end.// -->
 
                         <div class="form-group">
-                            <asp:TextBox ID="txtType" runat="server" type="text" class="form-control" placeholder="Type" value="Locataire"></asp:TextBox>
+                            <label>Qui êtes vous ?<br /></label>
+                            <asp:RadioButtonList ID="txtType" runat="server" RepeatDirection="Horizontal">
+                                <asp:ListItem Value="False">&nbsp;Locataire&nbsp;</asp:ListItem>
+                                <asp:ListItem Value="True">&nbsp;Proprietaire</asp:ListItem>
+                            </asp:RadioButtonList>
                         </div>
                         <!-- form-group end.// -->
-
+                        <hr />
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Numero</label>

@@ -85,5 +85,29 @@ namespace AFPABNB.Dao
             }
             return isError;
         }
+
+        public List<Hebergement> DelFavoris(int idclient, int idhebergement)
+        {
+            List<Hebergement> hebergements = null;
+
+            try
+            {
+                this.sqlParameters = new SqlParameter[2];
+                base.AddParameters("@IdClient", idclient.ToString());
+                base.AddParameters("@IdHebergement", idhebergement.ToString());
+
+
+                base.GetDataReader("sp_DelFavoris", sqlParameters);
+
+                base.sqlDataReader.Close();
+                base.sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                string Message = ex.Message;
+            }
+
+            return hebergements;
+        }
     }
 }

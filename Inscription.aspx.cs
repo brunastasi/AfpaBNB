@@ -31,7 +31,7 @@ namespace AFPABNB
             string password = this.txtPassword.Text;
             string email = this.txtEmail.Text;
 
-            string type = this.txtType.Text;
+            bool type = Convert.ToBoolean(this.txtType.Text);
 
 
             DaoClient daoClient = new DaoClient();

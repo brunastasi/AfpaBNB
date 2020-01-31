@@ -29,19 +29,6 @@ namespace AFPABNB.Dao
                 base.AddParameters("@Login", login);
                 base.AddParameters("@Password", password);
 
-                //SqlParameter[] sqlParameters = new SqlParameter[2];
-
-                //SqlParameter paramLogin = new SqlParameter();
-                //paramLogin.ParameterName = "@login";
-                //paramLogin.Value = login;
-                //sqlParameters[0] = paramLogin;
-
-                //SqlParameter paramPassword = new SqlParameter();
-                //paramPassword.ParameterName = "@password";
-                //paramPassword.Value = password;
-                //sqlParameters[1] = paramPassword;
-
-
                 base.GetDataReader("sp_getClient", sqlParameters);
 
                 if (base.sqlDataReader.HasRows)
@@ -75,7 +62,7 @@ namespace AFPABNB.Dao
             return client;
         }
 
-        public bool createClient(string nom, string prenom, string numero, string voie, string ville, string codepostal, string telephone, string login, string password, string email, string type, int nbeParameter)
+        public bool createClient(string nom, string prenom, string numero, string voie, string ville, string codepostal, string telephone, string login, string password, string email, bool type, int nbeParameter)
         {
             bool isError = false;
             string errorMsg = "";
@@ -89,7 +76,7 @@ namespace AFPABNB.Dao
                 base.AddParameters("@Login", login);
                 base.AddParameters("@Password", password);
                 base.AddParameters("@Email", email);
-                base.AddParameters("@Type", type);
+                base.AddParameters("@Type", type == true ? "1" : "0");
                 base.AddParameters("@Telephone", telephone);
 
                 base.AddParameters("@NomAdresse", "test");
@@ -99,6 +86,42 @@ namespace AFPABNB.Dao
                 base.AddParameters("@CodePostal", codepostal);
 
                 base.executeQuery("sp_AddClient");
+
+                base.sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                isError = true;
+                errorMsg = ex.Message;
+            }
+            return isError;
+        }
+
+        public bool updateClient(int idclient, string nom, string prenom, string numero, string voie, string ville, string codepostal, string telephone, string login, string password, string email, bool type, int nbeParameter)
+        {
+            bool isError = false;
+            string errorMsg = "";
+            base.nbeParameter = nbeParameter;
+
+            try
+            {
+                this.sqlParameters = new SqlParameter[nbeParameter];
+                base.AddParameters("@IdClient", idclient.ToString());
+                base.AddParameters("@Nom", nom);
+                base.AddParameters("@Prenom", prenom);
+                base.AddParameters("@Login", login);
+                base.AddParameters("@Password", password);
+                base.AddParameters("@Email", email);
+                base.AddParameters("@Type", type == true ? "1" : "0");
+                base.AddParameters("@Telephone", telephone);
+
+                base.AddParameters("@NomAdresse", "test");
+                base.AddParameters("@Numero", numero);
+                base.AddParameters("@Voie", voie);
+                base.AddParameters("@Ville", ville);
+                base.AddParameters("@CodePostal", codepostal);
+
+                base.executeQuery("sp_UpdateClient");
 
                 base.sqlConnection.Close();
             }

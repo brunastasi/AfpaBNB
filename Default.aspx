@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AFPABNB._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <div>
         <!-- Carousel -->
         <div id="carousel" class="carousel slide" data-ride="carousel" style="background-color: grey; width: 1140px; height: 500px;">
@@ -54,6 +55,7 @@
     <div class="jumbotron">
         <div class="input-group justify-content-center">
             <asp:DropDownList ID="ddlDepartement" class="custom-select" runat="server" ValidationGroup="recherche">
+                <asp:ListItem Value="" Text="" Selected="True">Selectionner</asp:ListItem>
                 <asp:ListItem Value="" Text="Departement">Departement</asp:ListItem>
                 <asp:ListItem Value="01" Text="01 Ain"></asp:ListItem>
                 <asp:ListItem Value="02" Text="02 Aisne"></asp:ListItem>
@@ -126,9 +128,9 @@
                 <asp:ListItem Value="66" Text="66 Pyrénées Orientales"></asp:ListItem>
                 <asp:ListItem Value="67" Text="67 Bas Rhin"></asp:ListItem>
                 <asp:ListItem Value="68" Text="68 Haut Rhin"></asp:ListItem>
+                <asp:ListItem Value="69" Text="69 Rhône"></asp:ListItem>
                 <asp:ListItem Value="70" Text="70 Haute Saône"></asp:ListItem>
                 <asp:ListItem Value="71" Text="71 Saône et Loire"></asp:ListItem>
-                <asp:ListItem Value="69" Text="69 Rhône"></asp:ListItem>
                 <asp:ListItem Value="72" Text="72 Sarthe"></asp:ListItem>
                 <asp:ListItem Value="73" Text="73 Savoie"></asp:ListItem>
                 <asp:ListItem Value="74" Text="74 Haute Savoie"></asp:ListItem>
@@ -160,6 +162,7 @@
             </asp:DropDownList>
 
             <asp:DropDownList ID="ddlTypeHebergement" runat="server" CssClass="custom-select" ValidationGroup="recherche">
+                <asp:ListItem Value="" Text="" Selected="True">Selectionner</asp:ListItem>
                 <asp:ListItem Value="" Text="Type d'hebergement">Type d'hebergement</asp:ListItem>
                 <asp:ListItem Value="Appartement" Text="Appartement"></asp:ListItem>
                 <asp:ListItem Value="Cabane" Text="Cabane"></asp:ListItem>
@@ -171,8 +174,10 @@
                 <asp:ListItem Value="Studio" Text="Studio"></asp:ListItem>
             </asp:DropDownList>
             <div class="input-group-append">
-                <asp:Button ID="Button1" runat="server" CssClass="btn btn-md btn-outline-primary" Text='Recherche' OnClick="Button1_Click" CommandArgument='<%#Eval("Id") %>' />
-            </div>
+                 <asp:Button ID="Button1" runat="server" CssClass="btn btn-md btn-outline-primary" Text='Recherche' PostBackUrl="~/ListeHebergements.aspx" />
+          
+               <%-- <asp:Button ID="Button1" runat="server" CssClass="btn btn-md btn-outline-primary" Text='Recherche' OnClick="Button1_Click" PostBackUrl="~/ListeHebergements.aspx" CommandArgument='<%#Eval("Id") %>' />
+          --%>  </div>
         </div>
     </div>
 

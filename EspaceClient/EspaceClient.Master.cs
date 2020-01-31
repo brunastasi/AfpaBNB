@@ -25,11 +25,13 @@ namespace AFPABNB.EspaceClient
             {
                 client = (Client)Session["Client"];
 
+                this.lblNom.Text = "" + client.Nom + " " + client.Prenom;
+
             }
 
             if (client == null)
             {
-                Response.Redirect("Connexion.aspx");
+                Response.Redirect("../Connexion.aspx");
             }
             else
             {

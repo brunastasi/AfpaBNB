@@ -11,34 +11,52 @@ namespace AFPABNB.EspaceClient
 {
 
 
-    public partial class EspaceClient
+    public partial class Messageries
     {
 
         /// <summary>
-        /// Contrôle lblNom.
+        /// Contrôle txtDestinataire.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNom;
+        protected global::System.Web.UI.WebControls.TextBox txtDestinataire;
 
         /// <summary>
-        /// Contrôle LinkDeconnexion.
+        /// Contrôle txtMessages.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkDeconnexion;
+        protected global::System.Web.UI.WebControls.TextBox txtMessages;
 
         /// <summary>
-        /// Contrôle MainContent.
+        /// Contrôle txtDate.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
+
+        /// <summary>
+        /// Contrôle Button1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Contrôle gdvMessagerie.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvMessagerie;
     }
 }

@@ -7,101 +7,101 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace AFPABNB
+namespace AFPABNB.EspaceClient
 {
 
 
-    public partial class Test
+    public partial class Avis
     {
 
         /// <summary>
-        /// Contrôle txtNomHebergement.
+        /// Contrôle txtNote.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomHebergement;
+        protected global::System.Web.UI.WebControls.TextBox txtNote;
 
         /// <summary>
-        /// Contrôle txtPhoto.
+        /// Contrôle txtCommentaire.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoto;
+        protected global::System.Web.UI.WebControls.TextBox txtCommentaire;
 
         /// <summary>
-        /// Contrôle txtType.
+        /// Contrôle Button1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtType;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Contrôle txtDescription.
+        /// Contrôle lblClient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        protected global::System.Web.UI.WebControls.Label lblClient;
 
         /// <summary>
-        /// Contrôle txtNomAdresse.
+        /// Contrôle lblNumero.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomAdresse;
+        protected global::System.Web.UI.WebControls.Label lblNumero;
 
         /// <summary>
-        /// Contrôle txtNumero.
+        /// Contrôle lblVoie.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumero;
+        protected global::System.Web.UI.WebControls.Label lblVoie;
 
         /// <summary>
-        /// Contrôle txtVoie.
+        /// Contrôle lblAdresse.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVoie;
+        protected global::System.Web.UI.WebControls.Label lblAdresse;
 
         /// <summary>
-        /// Contrôle txtVille.
+        /// Contrôle lblCodePostal.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVille;
+        protected global::System.Web.UI.WebControls.Label lblCodePostal;
 
         /// <summary>
-        /// Contrôle txtCodePostal.
+        /// Contrôle lblVille.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodePostal;
+        protected global::System.Web.UI.WebControls.Label lblVille;
 
         /// <summary>
-        /// Contrôle btnValider.
+        /// Contrôle lblPhoto.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnValider;
+        protected global::System.Web.UI.WebControls.Image lblPhoto;
     }
 }

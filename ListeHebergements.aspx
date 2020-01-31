@@ -6,7 +6,7 @@
         <ItemTemplate>
             <div class="d-flex border bg-light p-2 mb-1">
                 <div class="border">
-                    <img src="<%#Eval("Photo") %>" class="petite" />
+                    <img src="./Images/<%#Eval("Photo") %>" class="petite" />
                     <div class="grande">
                     </div>
                 </div>
@@ -16,14 +16,16 @@
                     </div>
                     <div>
                         <span class="badge badge-pill badge-info"><%#Eval("Adresse.Ville") %></span>
-                        <span class="badge badge-pill badge-warning"><%--<%#Eval("Prix") %>--%> €</span>
+                        <span class="badge badge-pill badge-warning"><%#Eval("Reservation.Prix") %> €</span>
                     </div>
                     <div>
                         <p></br><%#Eval("Description") %></p>
                     </div>
                     <div>
-                        <asp:Button ID="Button1" runat="server" CssClass="btn btn-warning mt-3" Text='Mettre en favoris' OnClick="Favoris_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
-                        <asp:Button ID="Button2" runat="server" CssClass="btn btn-info mt-3" Text='Réserver' OnClick="Reserver_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <asp:Button ID="Button1" runat="server" CssClass="btn btn-warning mt-3" Text='&#x2661;' OnClick="Favoris_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
+                            <asp:Button ID="Button2" runat="server" CssClass="btn btn-info mt-3" Text='Réserver' OnClick="Reserver_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,21 +33,19 @@
     </asp:ListView>
 
 
-    <nav aria-label="...">
+<%--    <nav aria-label="...">
         <ul class="pagination pagination-lg justify-content-end">
             <li class="page-item">
-                <a class="page-link" href="#">
+                <a class="page-link" href="#">--%>
                     <asp:DataPager ID="dtpArticle" PagedControlID="lvwArticle" PageSize="5" runat="server">
                         <Fields>
                             <asp:NumericPagerField />
                         </Fields>
                     </asp:DataPager>
-                </a>
+<%--                </a>
             </li>
         </ul>
-    </nav>
-
-    <script src="Scripts/lightbox.js"></script>
+    </nav>--%>
 
 
 </asp:Content>
