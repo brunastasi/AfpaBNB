@@ -5,7 +5,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
 
                 <div class="list-group">
                     <a href="Compte.aspx" class="list-group-item list-group-item-action">Mon Compte
@@ -17,7 +17,7 @@
                 </div>
 
             </div>
-            <div class="col-9">
+            <div class="col-md-9">
 
                 <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True"></asp:Label>
 

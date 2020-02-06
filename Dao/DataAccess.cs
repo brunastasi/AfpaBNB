@@ -20,7 +20,9 @@ namespace AFPABNB.Dao
         public DataAccess()
         {
             // On définit la chaine de connection a la base
-            string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=AfpaBNB;Integrated Security=True";
+            //string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=AfpaBNB;Integrated Security=True";
+            string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=AfpaBNB;User ID=sa;Password = root";
+                    
 
             // Objet pour se connecter à la base de donnée
             sqlConnection = new SqlConnection(connectionString);
@@ -60,8 +62,8 @@ namespace AFPABNB.Dao
                 throw ex;
             }
             finally
-            { 
-                            
+            {
+
             }
             count = 0;
             return isError;

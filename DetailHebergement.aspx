@@ -22,7 +22,7 @@
 
                  <asp:Button ID="Button3" runat="server" CssClass="btn btn-primary mt-3" Text='Contacter' OnClick="Contact_Click" CommandArgument='<%#Eval("IdHebergement") %>' />
             </div>
-                        <asp:TextBox ID="txtMessages" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtMessages" runat="server">@"Data Source=localhost\sqlexpress;Initial Catalog=AfpaBNB;User ID=sa;Password = root";</asp:TextBox>
                     </div>
                 </div>
 

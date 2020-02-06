@@ -4,7 +4,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
 
                 <div class="list-group">
                     <a href="Compte.aspx" class="list-group-item list-group-item-action active">Mon Compte
@@ -16,7 +16,8 @@
                 </div>
 
             </div>
-            <div class="col-9">
+
+            <div class="col-md-9">
 
                 <div class="card">
                     <header class="card-header">

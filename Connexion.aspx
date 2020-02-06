@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-5">
+            <div class="col-md-5">
                 <form action="" autocomplete="off">
                     <div class="card">
                         <div class="card-header">

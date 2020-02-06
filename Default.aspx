@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div>
+<%--    <div>
         <!-- Carousel -->
         <div id="carousel" class="carousel slide" data-ride="carousel" style="background-color: grey; width: 1140px; height: 500px;">
             <ol class="carousel-indicators">
@@ -48,11 +48,11 @@
             <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span> </a>
             <a class="carousel-control-next" href="#carousel" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span> </a>
         </div>
-    </div>
+    </div>--%>
 
 
 
-    <div class="jumbotron">
+    <div class="jumbotron md-5">
         <div class="input-group justify-content-center">
             <asp:DropDownList ID="ddlDepartement" class="custom-select" runat="server" ValidationGroup="recherche">
                 <asp:ListItem Value="" Text="" Selected="True">Selectionner</asp:ListItem>
